@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sendemail.apps.SendemailConfig',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# EMAIL
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_USE_TLS = False
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = 'aah@testing.com'
+# EMAIL_HOST_PASSWORD = ‘your account’s password’
