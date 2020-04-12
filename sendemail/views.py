@@ -11,7 +11,7 @@ def sendemail(request):
     message = ' it  means a world to us '
     email_from = settings.EMAIL_HOST_USER
     recipient_list = ['receiver@gmail.com',]
-    send_mail( subject, message, email_from, recipient_list )
+    send_mail( subject, message, email_from, recipient_list, fail_silently=True)
     return HttpResponse('redirect to a new page')
     # return ''
 
