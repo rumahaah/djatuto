@@ -3,13 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.0/dist/css/uikit.min.css" />
 </head>
 <body>
 	<div>
-		<form action="/your-name/" method="post">{% csrf_token %}
+		<form action="" method="post">{% csrf_token %}
 	    {{form.as_table}}
-	    <input type="submit" value="Submit">
+	    <input class="demo uk-button uk-button-default" onclick="UIkit.notification({message: 'Email was sent'})" type="submit" value="Submit">
+		<!-- <button class="demo uk-button uk-button-default" type="button" onclick="UIkit.notification({message: 'Email was sent'})">Click me</button> -->
     	</form>
 	</div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.4.0/dist/js/uikit.min.js"></script>
 </html>

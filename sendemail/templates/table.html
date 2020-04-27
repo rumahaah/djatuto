@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.0/dist/css/uikit.min.css" />
+</head>
+<body>
+	<!-- <h2></h2> -->
+	<table class="uk-table uk-table-small">
+		<tr>
+			<th>test 1</th>
+			<th>test 2</th>
+			<th>email</th>
+		</tr>
+		<tr>{% for data in a %}
+			<td>{{data.aaa}}</td>
+			<td>{{data.bbb}}</td>
+			<td>
+				{% if data.flagcalc == 0 %}
+					<a href="/sendemail/sendemail/{{data.id}}" class="">send email</a>
+					<!-- <button class="demo uk-button uk-button-default" type="button" onclick="UIkit.notification({message: 'Email was sent'})">Click me</button> -->
+				{% else %}
+					<span>sent</span>
+				{% endif %} 
+			</td>
+		</tr>{% endfor %}
+	</table>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.4.0/dist/js/uikit.min.js"></script>
+<script>
+	{% if m %}
+	// UIkit.notification({
+	//     message: 'row pk {{m}}, email sent',
+	//     status: 'primary',
+	//     pos: 'top-right',
+	//     timeout: 5000
+	// });
+	UIkit.notification('row pk {{m}}, email sent');
+	{% else %}
+	{% endif %}
+</script>
+</html>
